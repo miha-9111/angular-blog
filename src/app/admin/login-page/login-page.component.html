@@ -1,1 +1,35 @@
-<p>login-page works!</p>
+<form class="card" [formGroup]="form" (ngSubmit)="submit()">
+  <h2>Войти в панель администратора</h2>
+
+  <div
+    class="form-control"
+  >
+    <label for="email">Email:</label>
+    <input id="email" type="email" formControlName="email">
+    <div
+      *ngIf="form.get('email').invalid && form.get('email').touched"
+      class="validation">
+      <small *ngIf="form.get('email').errors.required">Поле "email не должно быть пустым".</small>
+      <small *ngIf="form.get('email').errors.email">Поле "email" заполнено неверно.</small>
+    </div>
+  </div>
+
+  <div
+    class="form-control"
+  >
+    <label for="password">Пароль:</label>
+    <input id="password" type="password" formControlName="password">
+    <div
+      *ngIf="form.get('password').invalid && form.get('password').touched"
+      class="validation">
+      <small *ngIf="form.get('password').errors.required">Поле "пароль" не должно быть пустым.</small>
+      <small *ngIf="form.get('password').errors.minlength">Пароль должен быть не менее 6 символов.</small>
+    </div>
+  </div>
+
+  <button
+    type="submit"
+    class="btn btn-primary"
+    [disabled]="form.invalid"
+  >Войти</button>
+</form>

@@ -32,5 +32,9 @@ export class PostsService {
             date: new Date(response[key].date)
           }));
       }));
-  };
+  }
+
+  remove(id: string): Observable<void> {
+    return this.http.delete<void>(`${environment.fbDbUrl}/posts/${id}.json`);
+  }
 }

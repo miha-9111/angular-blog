@@ -179,6 +179,9 @@ img {
   background: var(--danger-color);
   color: #fff;
 }
+.alert-danger {
+  border-radius: 30px;
+}
 
 .btn-success,
 .bg-success,
@@ -186,6 +189,9 @@ img {
 .alert-success {
   background: var(--success-color);
   color: #fff;
+}
+.alert-success {
+  border-radius: 30px;
 }
 
 .btn-white,

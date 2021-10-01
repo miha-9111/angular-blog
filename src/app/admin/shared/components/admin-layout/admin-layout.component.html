@@ -1,9 +1,12 @@
 <app-alert></app-alert>
 
 <nav class="navbar bg-primary">
-  <h1>
-    <a routerLink="/">Angular Admin</a>
-  </h1>
+  <h1>Angular ~ Admin</h1>
+  <ul *ngIf="!auth.isAuthenticated()">
+    <li>
+      <a [routerLink]="['/']">на главную</a>
+    </li>
+  </ul>
 
   <ul *ngIf="auth.isAuthenticated()">
     <li routerLinkActive="active">
